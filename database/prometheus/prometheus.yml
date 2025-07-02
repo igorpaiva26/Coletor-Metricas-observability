@@ -1,0 +1,140 @@
+scrape_configs:
+  # Exemplo existente para o Prometheus
+  - job_name: prometheus_node
+    static_configs:
+      - targets: ['192.168.0.54:9100']
+  # --- Clientes ---
+  - job_name: atel # Agrupamento para IPs 172.20
+    static_configs:
+      - targets:
+          - '172.20.183.66:9100' # Sistema homologação
+          - '172.20.183.75:9100' # Domain externo
+          - '172.20.183.76:9100' # Node 01
+          - '172.20.183.77:9100' # Node 02
+          - '172.20.183.78:9100' # Node 03
+          - '172.20.183.84:9100' # Node 04
+          - '172.20.183.68:9100' # Domain Interno
+          - '172.20.183.69:9100' # node 01
+          - '172.20.183.70:9100' # node 02
+          - '172.20.183.71:9100' # node 03
+          - '172.20.183.72:9100' # node 04
+          - '172.20.183.73:9100' # node 05
+          - '172.20.183.74:9100' # node 06
+          - '172.20.183.80:9100' # NFS
+          - '172.20.183.79:9100' # Rotinas
+  - job_name: softdados # Agrupamento para IPs 172.26
+    static_configs:
+      - targets:
+          - '172.26.26.200:9100' # Sistema homologação
+          - '172.26.26.101:9100' # Domain externo
+          - '172.26.26.102:9100' # Node 1
+          - '172.26.26.103:9100' # Node 2
+          - '172.26.26.104:9100' # Node 3
+          - '172.26.26.111:9100' # domain interno
+          - '172.26.26.112:9100' # node 1
+          - '172.26.26.113:9100' # node 2
+          - '172.26.26.114:9100' # node 3
+          - '172.26.26.121:9100' # NFS
+          - '172.26.26.120:9100' # ROTINAS
+  - job_name: weclix # Agrupamento para IPs 172.16
+    static_configs:
+      - targets:
+          - '172.16.11.36:9100' # Adapter-WECLIX-ROTINAS
+          - '172.16.11.126:9100' # DEV weclix (homologação)
+          - '172.16.11.60:9100' # Sistema - Homologacao
+          - '172.16.11.47:9100' # Adapter-WECLIXEXTDIGITAL-Domain
+          - '172.16.11.43:9100' # Adapter-WECLIXEXTDIGITAL-Host1
+          - '172.16.11.44:9100' # Adapter-WECLIXEXTDIGITAL-Host2
+          - '172.16.11.45:9100' # Adapter-WECLIXEXTDIGITAL-Host3
+          - '172.16.11.135:9100' # Adapter-WECLIXEXTDIGITAL-Host4
+          - '172.16.11.46:9100' # Adapter-WECLIXEXTTECNICO-Domain
+          - '172.16.11.41:9100' # Adapter-WECLIXEXTTECNICO-Host1
+          - '172.16.11.42:9100' # Adapter-WECLIXEXTTECNICO-Host2
+          - '172.16.11.131:9100' # Adapter-WECLIXEXTTECNICO-Host3
+          - '172.16.11.134:9100' # Adapter-WECLIXEXTTECNICO-Host4
+          - '172.16.11.37:9100' # Adapter-WECLIX-Domain
+          - '172.16.11.38:9100' # Adapter-WECLIX-Host1
+          - '172.16.11.39:9100' # Adapter-WECLIX-Host2
+          - '172.16.11.40:9100' # Adapter-WECLIX-Host3
+          - '172.16.11.122:9100' # Adapter-WECLIX-Host4
+          - '172.16.11.132:9100' # Adapter-WECLIX-Host5
+          - '172.16.11.133:9100' # Adapter-WECLIX-Host6
+  - job_name: solucao # Agrupamento para IPs 10.50
+    static_configs:
+      - targets:
+          - '10.50.50.6:9100' # Domain externo
+          - '10.50.50.7:9100' # Host1
+          - '10.50.50.8:9100' # Host2
+          - '10.50.50.9:9100' # Host3
+          - '10.50.50.14:9100' # sistema homolog
+          - '10.50.50.2:9100' # Domain interno
+          - '10.50.50.3:9100' # Host1
+          - '10.50.50.4:9100' # Host2
+          - '10.50.50.5:9100' # Host3
+          - '10.50.50.12:9100' # NFS
+          - '10.50.50.13:9100' # ROTINAS
+  - job_name: vero # Agrupamento para IPs 10.178
+    static_configs:
+      - targets:
+          - '10.178.1.96:9100' # API RADIUS
+          - '10.178.1.5:9100' # digital - node 1
+          - '10.178.1.6:9100' # digital - node 2
+          - '10.178.1.7:9100' # digital - node 3
+          - '10.178.1.8:9100' # digital - node 4
+          - '10.178.1.9:9100' # digital - node 5
+          - '10.178.1.10:9100' # digital - node 6
+          - '10.178.1.18:9100' # domain - digital
+          - '10.178.1.4:9100' # domain-interno
+          - '10.178.1.77:9100' # node 1
+          - '10.178.1.78:9100' # node 2
+          - '10.178.1.79:9100' # node 3
+          - '10.178.1.80:9100' # node 4
+          - '10.178.1.81:9100' # node 5
+          - '10.178.1.82:9100' # node 6
+          - '10.178.1.83:9100' # node 7
+          - '10.178.1.84:9100' # node 8
+          - '10.178.1.91:9100' # Rotinas 1 OCI
+          - '10.178.1.86:9100' # Rotinas 2 OCI
+          - '10.178.1.106:9100' # Rotinas 3 OCI
+          - '10.178.1.12:9100' # domain_tecnico
+          - '10.178.1.37:9100' # tecnico - node 1
+          - '10.178.1.38:9100' # tecnico - node 2
+          - '10.178.1.39:9100' # tecnico - node 3
+  - job_name: infra_geral # Exemplo de job para IPs gerais da infra
+    static_configs:
+      - targets:
+          - '192.168.0.217:9100' # Ansible-scripts
+          - '192.168.0.200:9100' # Adapter interno
+          - '192.168.0.21:9100' # AD nethserver
+          - '192.168.0.6:9100' # adapter interno
+          - '192.168.0.12:9100' # Adapter-ALPHA-1
+          - '192.168.0.40:9100' # alpha 4
+          - '192.168.0.46:9100' # alpha 6
+          - '192.168.0.4:9100' # central-alpha
+          - '192.168.0.50:9100' # central-testes
+          - '192.168.0.13:9100' # Delta
+          - '192.168.0.8:9100' # DevEnvironment 0.8
+          - '192.168.0.22:9100' # glpi novo
+          - '192.168.0.63:9100' # glpi-testes
+          - '192.168.0.216:9100' # Jenkins_infra
+          - '192.168.0.248:9100' # NFS proxmox 0.16
+          - '192.168.0.37:9100' # Omega adapter
+          - '192.168.0.41:9100' # Proxy de sites
+          - '192.168.0.66:9100' # Push notification
+          - '192.168.0.15:9100' # testelink
+          - '192.168.0.100:9100' # web-page devs
+          - '192.168.0.28:9100' # wiki adapter
+          - '192.168.0.120:9100' # wiki-suporte
+          - '192.168.0.19:9100' # Zabbix
+          - '192.168.0.35:9100' # autenticador
+          - '192.168.0.36:9100' # intermediador
+  - job_name: Proxmox # Exemplo de job para IPs proxmox
+    static_configs:
+      - targets:
+          - '192.168.0.1:9100' # Proxmox 0.1
+          - '192.168.0.11:9100' # Proxmox 0.11
+          - '192.168.0.16:9100' # Proxmox 0.16
+          - '192.168.0.26:9100' # Proxmox 0.26
+          - '192.168.0.29:9100' # Proxmox 0.29
+          - '192.168.0.45:9100' # Proxmox 0.45
+          - '192.168.0.9:9100' # Proxmox 0.9

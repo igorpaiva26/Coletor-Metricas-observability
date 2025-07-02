@@ -1,0 +1,5 @@
+database/prometheus/grafana.db
+database/prometheus/*.csv
+database/prometheus/*.pdf
+database/prometheus/*.png
+database/prometheus/plugins/
